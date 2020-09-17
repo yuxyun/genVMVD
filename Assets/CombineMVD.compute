@@ -1,0 +1,13 @@
+﻿#pragma kernel CSMain
+
+RWStructuredBuffer<uint> MV;
+RWStructuredBuffer<uint> Depth;
+RWStructuredBuffer<uint> MVD;
+
+[numthreads(10, 1, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    int x = id.x;
+
+    MVD[x] = x;
+}
